@@ -116,8 +116,9 @@ function App() {
             setPrevNum(result.toString() || curNum.toString())
             setRes(result.toString());
         } catch (error) {
+            const reserve = expression
             setExpression('Error');
-            setTimeout(() => setExpression(curNum), 1500)
+            setTimeout(() => setExpression(reserve), 1500)
         } 
     }
 
