@@ -41,14 +41,14 @@ function App() {
         if(expression === 0) {
             setCurNum(curNum ? curNum + num.target.innerText : num.target.innerText)
             setExpression(num.target.innerText)
-            return
+            return false
         }
         setCurNum(curNum + num.target.innerText)
         setExpression(expression + num.target.innerText)
     }
 
     function handleClickZero(zero) {
-        if(expression === 0) return
+        if(expression === 0) return false
         setCurNum(curNum + zero.target.innerText)
         setExpression(expression + zero.target.innerText)
     }
@@ -57,9 +57,9 @@ function App() {
         if(!curNum) {
             setCurNum(0 + curNum + dot.target.innerText)
             setExpression(expression + 0 + dot.target.innerText)
-            return
+            return false
         }
-        if(curNum.includes('.')) return
+        if(curNum.includes('.')) return false
         setCurNum(curNum + dot.target.innerText)
         setExpression(expression + dot.target.innerText)
     }
